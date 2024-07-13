@@ -1,0 +1,86 @@
+---
+interface Paper {
+  title: string;
+  abstract: string;
+  authors: string[];
+  date: string;
+  pdfUrl: string;
+}
+
+const papers: Paper[] = [
+  {
+    title: "Optimizing Teleportation Protocols",
+    abstract: "This paper explores noisy quantum teleportation protocols, focusing on optimizing fidelity and resource efficiency in quantum communication networks.",
+    authors: ["Mayank Bhatia", "Felix Leditzky"],
+    date: "May 2024",
+    pdfUrl: "/pdfs/senior-thesis.pdf"
+  },
+  {
+    title: "PipeChurn",
+    abstract: "This paper introduces PipeChurn, a reliable pipeline parallelism framework using Erasure Coding for edge environments. PipeChurn improves fault tolerance, accelerates recovery, and reduces end-to-end latency by 25.4% under failures, enhancing the efficiency of deep learning model training on edge devices.",
+    authors: ["Kai-Siang Wang","Mayank Bhatia","Mingyue Tang"],
+    date: "May 2024",
+    pdfUrl: "/pdfs/PipeChurn.pdf"
+  }
+];
+---
+
+<div id = "papers" class="research-papers">
+  <h2>Papers</h2>
+  {papers.map(paper => (
+    <div class="paper">
+      <h3>{paper.title}</h3>
+      <p class="authors">{paper.authors.join(', ')}</p>
+      <p class="date">{paper.date}</p>
+      <p class="abstract">{paper.abstract}</p>
+      <a href={paper.pdfUrl} target="_blank" rel="noopener noreferrer" class="view-paper">View Full Paper</a>
+    </div>
+  ))}
+</div>
+
+<style>
+  .research-papers {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+  .paper {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+  }
+  .paper:hover {
+    transform: translateY(-5px);
+  }
+  h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  .authors {
+    font-style: italic;
+    color: #666;
+  }
+  .date {
+    font-size: 0.9em;
+    color: #888;
+  }
+  .abstract {
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+  .view-paper {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+  .view-paper:hover {
+    background-color: #0056b3;
+  }
+</style>

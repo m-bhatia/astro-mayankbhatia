@@ -1,0 +1,38 @@
+
+---
+import Layout from '../layouts/Layout.astro';
+import Portrait from '../components/Portrait.astro';
+import ResearchPapers from '../components/ResearchPapers.astro';
+import Resume from '../components/Resume.astro';
+import Endorsements from '../components/Endorsements.astro';
+import About from '../components/About.astro';
+
+const description = `
+<p>
+Welcome to my personal website! Let's stay connected!
+</p>
+<p>
+I am a Master's student at the University of Illinois at Urbana-Champaign in the Department of Computer Science. 
+I'm also a co-founder of the company Linen Labs.
+</p>
+<p>
+My research interests include variational quantum optimization, quantum teleportation, distributed systems, efficient machine learning systems, and large-scale DL/AI applications (RAG, DLRM, etc.). 
+For more information you can explore this website and contact me directly!
+</p>
+<p>
+Contact me at <b>{firstname}@linenlabs.ai</b>.
+</p>`;
+---
+
+<Layout title="Mayank Bhatia - Personal Website">
+  <section id="home" class="hero">
+    <Portrait
+      imageUrl="/images/portrait.jpg"
+      description={description}
+    />
+  </section>
+  <ResearchPapers />
+  <Resume />
+  <Endorsements />
+  <About />
+</Layout>

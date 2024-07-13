@@ -1,0 +1,171 @@
+---
+interface Experience {
+  title: string;
+  company: string;
+  date: string;
+  description: string[];
+}
+
+const experiences: Experience[] = [
+{
+    title: "Co-Founder & Lead Developer",
+    company: "Linen Labs, Inc.",
+    date: "Current",
+    description: [
+      "Developed RAGHive, a no-code platform for custom Retrieval-Augmented Generation (RAG) systems, empowering businesses with advanced AI capabilities.",
+      "Spearheading efforts to democratize private data AI access across diverse business scales.",
+      "Overseeing development, codebase management, team mentorship, and key business operations."
+    ]
+  },
+  {
+    title: "President",
+    company: "SIGQuantum",
+    date: "8/2022 - 5/2024",
+    description: [
+      "Ran UIUC's quantum computing interest group, fostering club growth through hackathons and discussions.",
+      "Led a team of newcomers to 6th place globally at MIT's iQuHACK.",
+      "Exposed the field of quantum computing to campus by presenting a guest lecture at CS 222, giving a public workshop for ECE PULSE, and doing outreach for CS SAIL."
+    ]
+  },
+  {
+    title: "Project Leader",
+    company: "WaggleNet",
+    date: "1/2023 - 5/2024",
+    description: [
+      "Developed a custom Golang server to store and transmit beehive data from distributed sensors using radios and Raspberry Pis to reporting dashboards.",
+      "Designed a multi-tier system linking field sensors to user-facing dashboards for real-time beehive monitoring."
+    ]
+  },
+  {
+    title: "Undergraduate Researcher",
+    company: "Leditzky Research Group",
+    date: "1/2023 - 5/2024",
+    description: [
+      "Wrote a paper discussing efficient variational quantum optimization of teleportion protocols by exploiting duality with dense coding, as well as a shallow quantum circuit to test the capability of 3-level and 4-level Werner states as entangled resources in teleportation protocols.",
+      "Conducted detailed numerical studies on quantum teleportation protocols with noisy resources using variational quantum optimization techniques and HPC for accelerated quantum simulation. "
+    ]
+  },
+  {
+    title: "Machine Learning & Data Engineering Intern",
+    company: "Chalk Digital",
+    date: "5/2023 - 8/2023",
+    description: [
+      "Wrote a deep learning based recommender system to optimize the Real-Time Bidding process for hundreds of millions of daily requests.",
+      "Streamlined data collection and storage pipelines to support training and evaluation of complex models.",
+      "Engineered and managed feature sets for model performance and scalability."
+    ]
+  },
+  {
+    title: "Undergraduate Researcher",
+    company: "Illinois Mathematics Lab",
+    date: "1/2022 - 12/2022",
+    description: [
+      "Showed asymptotic upper bounds on the quantum capacity of various high-dimensional quantum channels using semidefinite program formulations, representation-theoretic reductions, and efficient linear program computations.",
+      "Reproduced counter-intuitive findings that increased noise can reliably enhance communication efficiency."
+    ]
+  }
+];
+
+interface Education {
+  degree: string;
+  institution: string;
+  date: string;
+}
+
+const education: Education[] = [
+  {
+    degree: "Master in Computer Science",
+    institution: "University of Illinois at Urbana-Champaign",
+    date: "Expected Graduation: December 2025"
+  },
+  {
+    degree: "Bachelor of Science in Computer Engineering",
+    institution: "University of Illinois at Urbana-Champaign",
+    date: "Graduated with Highest Honors: May 2024"
+  }
+];
+
+const skills: string[] = [
+  "Python", "Node.js", "Machine Learning",
+  "Quantum Computing", "Data Analysis", "AWS",
+  "PennyLane", "Deep Learning", "Git", "HPC (SLURM, sbatch, srun)"
+];
+---
+
+<div id = "resume" class="resume">
+  <h2>Resume</h2>
+  
+  <section>
+    <h3>Experience</h3>
+    {experiences.map(exp => (
+      <div class="experience">
+        <h4>{exp.title} - {exp.company}</h4>
+        <p class="date">{exp.date}</p>
+        <ul>
+          {exp.description.map(item => <li>{item}</li>)}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h3>Education</h3>
+    {education.map(edu => (
+      <div class="education">
+        <h4>{edu.degree}</h4>
+        <p>{edu.institution}</p>
+        <p class="date">{edu.date}</p>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h3>Skills</h3>
+    <ul class="skills">
+      {skills.map(skill => <li>{skill}</li>)}
+    </ul>
+  </section>
+</div>
+
+<style>
+  .resume {
+    max-width: 2000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+  }
+  .experience, .education {
+    margin-bottom: 1.5rem;
+  }
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+  .date {
+    font-style: italic;
+    color: #666;
+  }
+  ul {
+    padding-left: 1.5rem;
+  }
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  .skills li {
+    background-color: #e9ecef;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+  }
+</style>

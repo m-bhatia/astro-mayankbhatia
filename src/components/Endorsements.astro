@@ -1,0 +1,64 @@
+---
+interface Endorsement {
+  name: string;
+  position: string;
+  company: string;
+  content: string;
+}
+
+const endorsements: Endorsement[] = [
+  {
+    name: "Felix Leditzky",
+    position: "Professor of Mathematics",
+    company: "University of Illinois at Urbana-Champaign",
+    content: "Mayank is a highly motivated and capable student who I expect to achieve great things in academia and beyond. I have been mentoring and supervising him in undergraduate research programs at the University of Illinois Urbana-Champaign since the 2022 Spring term. In this time Mayank has studied mathematical and information-theoretic aspects of quantum information theory, and solved research-level problems together with undergraduate researchers under my supervision. In the current academic year 2023-24 Mayank is writing a senior thesis with me. It has been, and continues to be, a pleasure supervising him and engaging with him in discussions."
+  },
+  {
+    name: "Ajit Brar",
+    position: "BA",
+    company: "Meta",
+    content: "Mayank was an outstanding intern who made significant contributions to our team's real-time bidding model based on reinforcement learning. He demonstrated exceptional intelligence, a strong work ethic, and a passion for machine learning. Mayank's attention to detail, analytical skills, and commitment to high-quality work were evident in his ability to identify critical insights and improve our project. He excelled in teamwork and communication, actively seeking feedback and fostering collaboration. Mayank's eagerness to learn and adapt to new challenges set him apart, and I have no doubt he will continue to excel in his career. I highly recommend Mayank to any organization seeking a talented individual with expertise in reinforcement learning and machine learning."
+  },
+  // Add more endorsements as needed
+];
+---
+
+<div id="endorsements" class="endorsements">
+  <h2>Endorsements</h2>
+  {endorsements.map(endorsement => (
+    <div class="endorsement">
+      <blockquote>"{endorsement.content}"</blockquote>
+      <div class="author">
+        <strong>{endorsement.name}</strong>
+        <p>{endorsement.position} at {endorsement.company}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .endorsements {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+  .endorsement {
+    background-color: #ffffff;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  blockquote {
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+  }
+  .author {
+    text-align: right;
+  }
+  .author p {
+    margin: 0;
+    color: #666;
+  }
+</style>

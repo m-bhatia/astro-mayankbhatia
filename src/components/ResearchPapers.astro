@@ -43,6 +43,13 @@ const papers: Paper[] = [
     max-width: 2000px;
     margin: 0 auto;
   }
+  .research-papers::before {
+    content: "";
+    display: block;
+    height: 0.5rem; /* A little extra space */
+    margin-top: -0.5rem; /* A little extra space */
+    visibility: hidden;
+  }
   .paper {
     background-color: #ffffff;
     border-radius: 8px;

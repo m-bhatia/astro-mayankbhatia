@@ -7,7 +7,7 @@
   <style>
     header {
       position: fixed;
-      top: 0;
+      top: 0px; /* Offset from the top */
       left: 0;
       right: 0;
       background-color: rgba(255, 255, 255, 0.9);
@@ -33,7 +33,7 @@
     a:hover {
       color: #007bff;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 430px) {
       nav {
         justify-content: flex-start;
         padding: 0 1rem;
@@ -48,8 +48,29 @@
       <a href="#papers">Papers</a>
       <a href="#resume">Resume</a>
       <a href="#endorsements">Endorsements</a>
-      <!-- <a href="#about">About</a> -->
     </nav>
   </header>
+
+  <script>
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
+        e.preventDefault();
+
+        const offset = 64; // Offset value in pixels
+        const targetId = this.getAttribute('href')!.substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const targetPosition = targetElement.offsetTop - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

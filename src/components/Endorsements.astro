@@ -41,6 +41,13 @@ const endorsements: Endorsement[] = [
     max-width: 2000px;
     margin: 0 auto;
   }
+  .endorsements::before {
+    content: "";
+    display: block;
+    height: 0.5rem; /* A little extra space */
+    margin-top: -0.5rem; /* A little extra space */
+    visibility: hidden;
+  }
   .endorsement {
     background-color: #ffffff;
     border-left: 4px solid #007bff;

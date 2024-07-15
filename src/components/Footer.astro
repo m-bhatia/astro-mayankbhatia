@@ -1,4 +1,4 @@
----
+<!-- ---
 const currentYear = new Date().getFullYear();
 ---
 
@@ -17,7 +17,7 @@ const currentYear = new Date().getFullYear();
   </div>
 </footer>
 <div class="footer-bottom">
-    <p>&copy; {currentYear} Mayank Bhatia.</p>
+    <p class="footer-text">&copy; {currentYear} Mayank Bhatia. Icons by Icons8.</p>
 </div>
 
 <style>
@@ -61,5 +61,80 @@ a:hover {
   padding-top: 1rem;
   border-top: 1px solid #dee2e6;
   width: 100%;
+}
+.footer-text {
+  display: inline;
+}
+</style> -->
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: mayank@linenlabs.ai</p>
+      <p>Location: Urbana-Champaign, IL</p>
+    </div>
+    <div class="footer-section">
+      <h3>Connect</h3>
+      <a href="https://www.linkedin.com/in/bhatia-mayank/" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/mayank.bhatia.18041/" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">Facebook</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+    <p class="footer-text">&copy; {currentYear} Mayank Bhatia. Icons by <a href="https://icons8.com" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">Icons8</a>.</p>
+</div>
+
+<style>
+footer {
+  background-color: #f8f9fa;
+  padding: 3rem 1rem 1rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.footer-section {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 2rem;
+  text-align: center; /* Adjusted text alignment */
+}
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+a, p {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #007bff;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+  width: 100%;
+}
+.footer-text {
+  display: inline;
+  white-space: nowrap; /* Ensure the text does not wrap */
+}
+.footer-text a {
+  display: inline;
 }
 </style>

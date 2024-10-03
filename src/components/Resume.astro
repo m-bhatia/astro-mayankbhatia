@@ -1,6 +1,7 @@
 ---
 interface Experience {
   title: string;
+  link : string;
   company: string;
   date: string;
   description: string[];
@@ -9,25 +10,37 @@ interface Experience {
 const experiences: Experience[] = [
 {
     title: "Co-Founder",
-    company: <a href="https://linenlabs.ai" id="connected-link" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">Linen Labs, Inc.</a>, 
+    company: "Linen Labs Inc.",
+    link: "https://linenlabs.ai",
     date: "Current",
     description: [
       "Developed RAGHive, a no-code platform for custom Retrieval-Augmented Generation (RAG) systems, empowering businesses with advanced private data AI access."
     ]
   },
   {
+    title: "Graduate Researcher",
+    company: "Leditzky Research Group",
+    link: "https://publish.illinois.edu/leditzky-group/",
+    date: "Current",
+    description: [
+      "Conducting research on measuring entanglement witnesses for graph states."
+    ]
+  },
+  {
     title: "President",
-    company: <a href="https://sigquantum.com" id="connected-link" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">SigQuantum</a>,
+    company: "SigQuantum",
+    link: "https://sigquantum.com",
     date: "8/2022 - 5/2024",
     description: [
-      "Ran UIUC's quantum computing interest group, fostering club growth through hackathons and discussions.",
+      "Ran UIUC's quantum computing interest group, fostering club growth through hackathons, discussions, and equipping future leaders.",
       "Led a team of newcomers to 6th place globally at MIT's iQuHACK.",
       "Exposed the field of quantum computing to campus by presenting a guest lecture at CS 222, giving a public workshop for ECE PULSE, and doing outreach for CS SAIL."
     ]
   },
   {
     title: "Project Leader",
-    company: <a href="https://wagglenet.org" id="connected-link" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">WaggleNet Research Group</a>,
+    company: "Wagglenet Research Group",
+    link: "https://wagglenet.org",
     date: "1/2023 - 5/2024",
     description: [
       "Developed a custom Golang server to store and transmit beehive data from distributed sensors using radios and Raspberry Pis to reporting dashboards.",
@@ -36,16 +49,19 @@ const experiences: Experience[] = [
   },
   {
     title: "Undergraduate Researcher",
-    company: <a href="https://publish.illinois.edu/leditzky-group/" id="connected-link" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">Leditzky Research Group</a>,
+    company: "Leditzky Research Group",
+    link: "https://publish.illinois.edu/leditzky-group/",
     date: "1/2023 - 5/2024",
     description: [
-      "Wrote a paper discussing efficient variational quantum optimization of teleportion protocols by exploiting duality with dense coding, as well as a shallow quantum circuit to test the capability of 3-level and 4-level Werner states as entangled resources in teleportation protocols.",
-      "Conducted detailed numerical studies on quantum teleportation protocols with noisy resources using variational quantum optimization techniques and HPC for accelerated simulation. "
+      "Overall, my research was about using variational optimization to better understand quantum communication networks",
+      "Specifically, developed efficient algorithms for variational quantum optimization of teleportion communication protocols by leveraging duality with dense coding communication protocols",
+      "Conducted detailed entanglement studies on 3-level and 4-level Werner states using variational quantum optimization and high performance computing (HPC), categorizing these states on if they offer a quantum advantage for teleportation."
     ]
   },
   {
     title: "Data Science Intern",
-    company: <a href="https://chalkdigital.com" id="connected-link" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">Chalk Digital</a>,
+    company: "Chalk Digital",
+    link: "https://chalkdigital.com",
     date: "5/2023 - 8/2023",
     description: [
       "Wrote a deep learning based recommender system to optimize the Real-Time Bidding process for hundreds of millions of daily requests.",
@@ -55,7 +71,8 @@ const experiences: Experience[] = [
   },
   {
     title: "Undergraduate Researcher",
-    company:  <a href="https://iml.math.illinois.edu/" id="connected-link" style="cursor: pointer; color: black; text-decoration: underline;" target="_blank">Illinois Geometry Lab</a>,
+    company: "Illinois Geometry Lab",
+    link: "https://iml.math.illinois.edu/",
     date: "1/2022 - 12/2022",
     description: [
       "Showed asymptotic upper bounds on the quantum capacity of various high-dimensional quantum channels using semidefinite program formulations, representation-theoretic reductions, and efficient linear program computations.",
@@ -97,7 +114,9 @@ const skills: string[] = [
     <h3>Experience</h3>
     {experiences.map(exp => (
       <div class="experience">
-        <h4>{exp.title} - {exp.company}</h4>
+        <h4>
+          <a href={exp.link}>{exp.title}</a> - {exp.company}
+        </h4>
         <p class="date">{exp.date}</p>
         <ul>
           {exp.description.map(item => <li>{item}</li>)}
@@ -167,3 +186,4 @@ const skills: string[] = [
     border-radius: 20px;
   }
 </style>
+Define the Experience interface

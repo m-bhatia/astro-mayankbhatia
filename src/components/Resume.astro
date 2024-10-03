@@ -115,7 +115,7 @@ const skills: string[] = [
     {experiences.map(exp => (
       <div class="experience">
         <h4>
-          <a href={exp.link}>{exp.title}</a> - {exp.company}
+          {exp.title} - <a href={exp.link} style={{ color: 'black', textDecoration: 'none' }}>{exp.company}</a>
         </h4>
         <p class="date">{exp.date}</p>
         <ul>
